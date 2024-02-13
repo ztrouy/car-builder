@@ -1,4 +1,5 @@
 import { interiorOptions } from "./interiorOptions.js"
+import { orderButton } from "./orderButton.js"
 import { paintOptions } from "./paintOptions.js"
 import { technologyOptions } from "./technologyOptions.js"
 import { wheelOptions } from "./wheelOptions.js"
@@ -8,6 +9,7 @@ const render = async () => {
     const interiorHTML = await interiorOptions()
     const technologyHTML = await technologyOptions()
     const wheelHTML = await wheelOptions()
+    const buttonHTML = await orderButton()
     
     const composedHTML = `
     <h1>Cars 'R Us: Personal Car Builder</h1>
@@ -20,6 +22,7 @@ const render = async () => {
     </article>
 
     <article class="order">
+        ${buttonHTML}
     </article>
 
     <article class="customOrders">
