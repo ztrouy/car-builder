@@ -1,8 +1,13 @@
-const render = () => {
+import { paintOptions } from "./paintOptions.js"
+
+const render = async () => {
+    const paintHTML = await paintOptions()
+    
     const composedHTML = `
     <h1>Cars 'R Us: Personal Car Builder</h1>
 
     <article class="choices">
+        ${paintHTML}
     </article>
 
     <article class="order">
