@@ -8,7 +8,6 @@ const render = () => {
     <article class="order">
     </article>
 
-
     <article class="customOrders">
     <h2>Custom Car Orders</h2>
     </article>
