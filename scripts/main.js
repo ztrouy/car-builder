@@ -1,13 +1,22 @@
+import { interiorOptions } from "./interiorOptions.js"
 import { paintOptions } from "./paintOptions.js"
+import { technologyOptions } from "./technologyOptions.js"
+import { wheelOptions } from "./wheelOptions.js"
 
 const render = async () => {
     const paintHTML = await paintOptions()
+    const interiorHTML = await interiorOptions()
+    const technologyHTML = await technologyOptions()
+    const wheelHTML = await wheelOptions()
     
     const composedHTML = `
     <h1>Cars 'R Us: Personal Car Builder</h1>
 
     <article class="choices">
         ${paintHTML}
+        ${interiorHTML}
+        ${technologyHTML}
+        ${wheelHTML}
     </article>
 
     <article class="order">
