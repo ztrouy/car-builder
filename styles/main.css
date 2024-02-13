@@ -33,3 +33,9 @@ h1, h2, h3, h4, h5, h6 {
 .optionCard h2 {
     margin-top: 0;
 }
+
+#placeOrder {
+    background-color: #185558;
+    color: #f5f5dc;
+    margin: 1em;
+}
