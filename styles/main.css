@@ -15,11 +15,19 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Patua One", serif;
 }
 
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 800px;
+}
+
 .optionCard {
-    background-color: #f5f5dc;
+    flex-basis: 40%;
     padding: 1.5em;
+    margin: 1em;
     border: 1px dashed royalblue;
     border-radius: 10px;
+    background-color: #f5f5dc;
 }
 
 .optionCard h2 {
