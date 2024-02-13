@@ -14,3 +14,14 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Patua One", serif;
 }
+
+.optionCard {
+    background-color: #f5f5dc;
+    padding: 1.5em;
+    border: 1px dashed royalblue;
+    border-radius: 10px;
+}
+
+.optionCard h2 {
+    margin-top: 0;
+}
