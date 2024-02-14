@@ -1,3 +1,5 @@
+import { setTechnologyId } from "./transientState.js"
+
 export const technologyOptions = async () => {
     const response = await fetch("http://localhost:8088/technologies")
     const technologies = await response.json()
@@ -12,3 +14,14 @@ export const technologyOptions = async () => {
 
     return technologiesHTML
 }
+
+const changeHandler = (changeEvent) => {
+    const eventTarget = changeEvent.target
+    const eventTargetValue = parseInt(eventTarget.value)
+
+    if (eventTarget.id === "technology") {
+        setTechnologyId(eventTargetValue)
+    }
+}
+
+document.addEventListener("change", changeHandler)

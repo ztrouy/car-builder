@@ -1,3 +1,5 @@
+import { setWheelId } from "./transientState.js"
+
 export const wheelOptions = async () => {
     const response = await fetch("http://localhost:8088/wheels")
     const wheels = await response.json()
@@ -12,3 +14,14 @@ export const wheelOptions = async () => {
 
     return wheelsHTML
 }
+
+const changeHandler = (changeEvent) => {
+    const eventTarget = changeEvent.target
+    const eventTargetValue = parseInt(eventTarget.value)
+
+    if (eventTarget.id === "wheel") {
+        setWheelId(eventTargetValue)
+    }
+}
+
+document.addEventListener("change", changeHandler)
