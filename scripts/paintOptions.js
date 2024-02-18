@@ -6,7 +6,7 @@ export const paintOptions = async () => {
 
     let paintsHTML = `<section class="optionCard"><h2>Paints</h2><select id="paint">`
 
-    paintsHTML += `<option value="0">Please Select a Paint Color</option>`
+    paintsHTML += `<option value="0" selected disabled hidden>Please Select a Paint Color</option>`
 
     const optionStringArray = paints.map(paint => {return `<option value="${paint.id}">${paint.color}</option>`})
 

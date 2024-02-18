@@ -2,6 +2,7 @@ import { interiorOptions } from "./interiorOptions.js"
 import { orderButton } from "./orderButton.js"
 import { ordersList } from "./ordersList.js"
 import { paintOptions } from "./paintOptions.js"
+import { styleOptions } from "./styleOptions.js"
 import { technologyOptions } from "./technologyOptions.js"
 import { wheelOptions } from "./wheelOptions.js"
 
@@ -10,6 +11,7 @@ const render = async () => {
     const interiorHTML = await interiorOptions()
     const technologyHTML = await technologyOptions()
     const wheelHTML = await wheelOptions()
+    const styleHTML = await styleOptions()
     const buttonHTML = await orderButton()
     const ordersHTML = await ordersList()
     
@@ -21,6 +23,7 @@ const render = async () => {
         ${interiorHTML}
         ${technologyHTML}
         ${wheelHTML}
+        ${styleHTML}
     </article>
 
     <article id="orderButton">
