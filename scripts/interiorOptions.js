@@ -6,7 +6,7 @@ export const interiorOptions = async () => {
 
     let interiorsHTML = `<section class="optionCard"><h2>Interiors</h2><select id="interior">`
 
-    interiorsHTML += `<option value="0">Please Select an Interior Material</option>`
+    interiorsHTML += `<option value="0" selected disabled hidden>Please Select an Interior Material</option>`
 
     const optionStringArray = interiors.map(interior => {return `<option value="${interior.id}">${interior.type}</option>`})
 
