@@ -42,6 +42,12 @@ export const placeOrder = async () => {
 
     const response = await fetch("http://localhost:8088/orders", postOptions)
 
+    setPaintId(0)
+    setInteriorId(0)
+    setTechnologyId(0)
+    setWheelId(0)
+    setStyleId(0)
+
     const submissionEvent = new CustomEvent("newOrderPlaced")
     document.dispatchEvent(submissionEvent)
 }
