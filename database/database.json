@@ -87,12 +87,30 @@
       "price": 900
     }
   ],
+  "styles": [
+    {
+      "id": 1,
+      "style": "Car",
+      "priceMultiplier": 1
+    },
+    {
+      "id": 2,
+      "style": "SUV",
+      "priceMultiplier": 1.5
+    },
+    {
+      "id": 3,
+      "style": "Truck",
+      "priceMultiplier": 2.25
+    }
+  ],
   "orders": [
     {
       "paintId": 2,
       "interiorId": 3,
       "technologyId": 4,
       "wheelId": 1,
+      "styleId": 1,
       "id": 1
     },
     {
@@ -100,6 +118,7 @@
       "interiorId": 4,
       "technologyId": 4,
       "wheelId": 4,
+      "styleId": 2,
       "id": 2
     },
     {
@@ -107,6 +126,7 @@
       "interiorId": 2,
       "technologyId": 2,
       "wheelId": 2,
+      "styleId": 3,
       "id": 3
     }
   ]
