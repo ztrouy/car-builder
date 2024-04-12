@@ -1,7 +1,7 @@
 import { setPaintId } from "./transientState.js"
 
 export const paintOptions = async () => {
-    const response = await fetch("http://localhost:8088/paints")
+    const response = await fetch("https://localhost:7096/paintcolors")
     const paints = await response.json()
 
     let paintsHTML = `<section class="optionCard"><h2>Paints</h2><select id="paint">`
