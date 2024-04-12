@@ -1,14 +1,14 @@
-import { setWheelId } from "./transientState.js"
+import { setWheelsId } from "./transientState.js"
 
 export const wheelOptions = async () => {
-    const response = await fetch("http://localhost:8088/wheels")
+    const response = await fetch("https://localhost:7096/wheels")
     const wheels = await response.json()
 
     let wheelsHTML = `<section class="optionCard"><h2>Wheels</h2><select id="wheel">`
 
     wheelsHTML += `<option value="0" selected disabled hidden>Please Select a Wheel Type</option>`
 
-    const optionStringArray = wheels.map(wheel => {return `<option value="${wheel.id}">${wheel.wheel}</option>`})
+    const optionStringArray = wheels.map(wheel => {return `<option value="${wheel.id}">${wheel.style}</option>`})
 
     wheelsHTML += `${optionStringArray.join("")}</select></section>`
 
@@ -20,7 +20,7 @@ const changeHandler = (changeEvent) => {
     const eventTargetValue = parseInt(eventTarget.value)
 
     if (eventTarget.id === "wheel") {
-        setWheelId(eventTargetValue)
+        setWheelsId(eventTargetValue)
     }
 }
 

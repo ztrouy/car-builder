@@ -1,7 +1,7 @@
 import { setTechnologyId } from "./transientState.js"
 
 export const technologyOptions = async () => {
-    const response = await fetch("http://localhost:8088/technologies")
+    const response = await fetch("https://localhost:7096/technologies")
     const technologies = await response.json()
 
     let technologiesHTML = `<section class="optionCard"><h2>Technologies</h2><select id="technology">`
