@@ -1,3 +1,5 @@
+import { completeOrder } from "./transientState.js"
+
 export const ordersList = async () => {
     const response = await fetch("https://localhost:7096/orders")
     const orders = await response.json()
@@ -11,7 +13,9 @@ export const ordersList = async () => {
         })
 
 
-        const orderHTML = `<div class="order">${order.paintColor.color} ${order.style.type} with ${order.wheels.style} wheels, ${order.interior.material} interiors, and the ${order.technology.package} for a total cost of ${formattedOrderCost}</div>`
+        let orderHTML = `<div class="order">${order.paintColor.color} ${order.style.type} with ${order.wheels.style} wheels, ${order.interior.material} interiors, and the ${order.technology.package} for a total cost of ${formattedOrderCost}`
+
+        orderHTML += `<input type="button" name="complete" id="${order.id}" value="Complete"/></div>`
 
         return orderHTML
     })
@@ -20,3 +24,10 @@ export const ordersList = async () => {
 
     return ordersHTML
 }
+
+document.addEventListener("click", event => {
+    const {name, id} = event.target
+    if (name === "complete") {
+        completeOrder(id)
+    }
+})
