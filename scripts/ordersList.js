@@ -5,8 +5,7 @@ export const ordersList = async () => {
     let ordersHTML = `<h2>Custom Car Orders</h2><section id="ordersList">`
 
     const divStringArray = orders.map(order => {
-        const orderCost = (order.paintColor.price + order.interior.price + order.technology.price + order.wheels.price) * order.style.priceMultiplier
-        const formattedOrderCost = orderCost.toLocaleString("en-US", {
+        const formattedOrderCost = order.price.toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
         })
