@@ -51,3 +51,12 @@ export const placeOrder = async () => {
     const submissionEvent = new CustomEvent("newOrderPlaced")
     document.dispatchEvent(submissionEvent)
 }
+
+export const completeOrder = async (orderId) => {
+    const postOptions = {
+        method: "POST"
+    }
+    
+    await fetch(`https://localhost:7096/orders/${orderId}/fulfill`, postOptions)
+    document.dispatchEvent(new CustomEvent("orderFulfilled"))
+}

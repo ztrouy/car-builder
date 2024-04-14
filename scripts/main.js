@@ -39,5 +39,6 @@ const render = async () => {
 }
 
 document.addEventListener("newOrderPlaced", render)
+document.addEventListener("orderFulfilled", render)
 
 render()
